@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mithra - Interior in Bangalore</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-red: #f15a46;
+            --primary-dark: #2c3e50;
+            --bg-light: #f8f9fa;
+            --text-muted: #6c757d;
+            --stats-green: #3a7d74;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+        }
+        
+        .text-primary-red { color: var(--primary-red) !important; }
+        .bg-primary-red { background-color: var(--primary-red) !important; }
+        .btn-primary-red {
+            background-color: var(--primary-red);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .btn-primary-red:hover {
+            background-color: #d94a38;
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        /* Header */
+        .top-header {
+            background: rgba(51, 51, 51, 0.8);
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .logo {
+            height: 30px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-form-card {
+            background-image: linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%);
+            
+            color: #333;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .form-control, .form-select {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        
+        .whatsapp-check {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Trust Badges */
+        .trust-badge {
+            text-align: center;
+            padding: 20px;
+        }
+        .trust-badge img {
+            height: 40px;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        .trust-badge p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            color: #555;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background-color: var(--stats-green);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Cards & Sliders */
+        .budget-card {
+            border-radius: 8px;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            position: relative;
+        }
+        .budget-card:hover {
+            transform: translateY(-5px);
+        }
+        .budget-card img {
+            height: 240px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .price-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255,255,255,0.95);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #333;
+        }
+        .bhk-tag {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        /* Services Accordion Customization */
+        .service-list {
+            list-style: none;
+            padding: 0;
+        }
+        .service-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 0.95rem;
+            color: #555;
+        }
+        .service-list li:last-child { border-bottom: none; }
+        
+        /* Partners */
+        .partner-logo {
+            max-height: 40px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+        .partner-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        /* Estimates */
+        .estimate-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            height: 100%;
+            transition: box-shadow 0.3s;
+        }
+        .estimate-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .estimate-icon {
+            width: 60px;
+            height: 60px;
+            background: #f8f9fa;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: var(--primary-red);
+            font-size: 24px;
+        }
+
+        /* How it Works */
+        .process-step {
+            text-align: center;
+            position: relative;
+            padding: 20px;
+        }
+        .process-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border: 2px solid #eee;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: var(--primary-red);
+            font-size: 28px;
+            position: relative;
+            z-index: 2;
+        }
+        .step-connector {
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            width: 100%;
+            height: 2px;
+            background: #eee;
+            z-index: 1;
+        }
+        /* Project Gallery */
+        .project-card {
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .process-step:last-child .step-connector { display: none; }
+        
+        /* Testimonials */
+        .testimonial-card {
+            border: none;
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .video-thumb {
+            position: relative;
+            height: 200px;
+            background: #ddd;
+            overflow: hidden;
+        }
+        .video-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-red);
+            cursor: pointer;
+        }
+
+        /* FAQ */
+        .accordion-button:not(.collapsed) {
+            background-color: #fff;
+            color: var(--primary-dark);
+            box-shadow: none;
+            font-weight: 600;
+        }
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(0,0,0,.125);
+        }
+
+        /* Footer */
+        .footer-bottom {
+            background: #2c3e50;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.8rem;
+            padding: 15px 0;
+        }
+
+        /* Utilities */
+        .section-padding { padding: 60px 0; }
+        .bg-light-gray { background-color: #f8f9fa; }
+        
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .hero-section { padding: 40px 0; text-align: center; }
+            .stat-number { font-size: 2rem; }
+            .process-step { margin-bottom: 30px; }
+            .step-connector { display: none; }
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="top-header sticky-top">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo">
+               <svg style="width: 40%;" viewBox="0 0 300 70.55747944482997" class="looka-1j8o68f"><defs id="SvgjsDefs2943"><linearGradient id="SvgjsLinearGradient2946"><stop id="SvgjsStop2947" stop-color="#905e26" offset="0"></stop><stop id="SvgjsStop2948" stop-color="#f5ec9b" offset="0.5"></stop><stop id="SvgjsStop2949" stop-color="#905e26" offset="1"></stop></linearGradient></defs><g id="SvgjsG2944" featurekey="NcgQJ4-0" transform="matrix(5.226480697300058,0,0,5.226480697300058,-3.135889166034096,-34.59930660236354)" fill="url(#SvgjsLinearGradient2946)"><path d="M16.52 8.44 c-0.76 0.16 -1.16 0.46 -1.16 1 l0 8.78 c0 0.56 0.4 0.78 1.16 0.94 l0 0.84 l-4.68 0 l0 -0.84 c0.76 -0.16 1.2 -0.38 1.2 -0.94 l0 -7.7 l-4.1 8.38 c-0.26 0.52 -0.9 0.52 -1.18 0 l-4.6 -8 l0 7.32 c0 0.56 0.44 0.78 1.18 0.94 l0 0.84 l-3.74 0 l0 -0.84 c0.78 -0.16 1.2 -0.38 1.2 -0.94 l0 -8.78 c0 -0.54 -0.42 -0.84 -1.2 -1 l0 -0.86 l3.38 0 l4.88 8.74 l4.4 -8.74 l3.26 0 l0 0.86 z M19.66 9.18 c-0.72 0 -1.3 -0.58 -1.3 -1.28 s0.58 -1.28 1.3 -1.28 c0.7 0 1.28 0.58 1.28 1.28 s-0.58 1.28 -1.28 1.28 z M20.86 18.62 c0 0.46 0.34 0.56 0.86 0.56 l0 0.82 l-3.82 0 l0 -0.82 c0.54 0 0.88 -0.1 0.88 -0.56 l0 -5.92 c0 -0.46 -0.16 -0.62 -0.56 -0.62 l-0.4 0 l0 -0.92 l2.4 -0.34 c0.46 -0.06 0.64 0.3 0.64 0.74 l0 7.06 z M27.66 18.66 c0.38 -0.26 0.92 0.46 0.54 0.74 c-0.38 0.3 -1 0.72 -2.14 0.72 c-1.54 0 -2.48 -0.84 -2.48 -2.92 l0 -5.06 l-0.96 0 l0 -1.02 c1.18 0 1.74 -1.14 2.28 -2.18 c0.22 -0.4 0.82 -0.34 0.82 0.06 l0 1.98 l2.2 0 l0 0.68 c0 0.32 -0.12 0.48 -0.44 0.48 l-1.76 0 l0 5.4 c0 0.88 0.18 1.52 0.86 1.52 c0.46 0 0.84 -0.24 1.08 -0.4 z M38.7 18 c0 0.66 0.18 1.1 1.2 0.86 l-0.26 0.94 c-0.44 0.16 -1 0.2 -1.38 0.2 c-1.08 0 -1.64 -0.66 -1.64 -1.44 l0 -4.02 c0 -1.44 -0.24 -2.36 -1.48 -2.36 c-1.34 0 -2.36 1.26 -2.74 1.7 l0 4.74 c0 0.46 0.32 0.56 1 0.56 l0 0.82 l-4.02 0 l0 -0.82 c0.64 0 0.94 -0.1 0.94 -0.56 l0 -9.68 c0 -0.66 -0.42 -0.88 -1.18 -0.78 l0 -0.9 l2.66 -0.36 c0.74 -0.1 0.6 0.6 0.54 1.48 l0 3.9 l-0.1 0.72 c0.36 -0.62 1.42 -2.22 3.34 -2.22 c1.86 0 3.1 0.72 3.12 3.5 l0 3.72 z M47.64 12.76 c-0.6 0.76 -0.84 -0.26 -1.78 -0.26 c-1.14 0 -1.66 1.64 -1.8 2.48 l0 3.66 c0 0.46 0.34 0.56 1.08 0.56 l0 0.8 l-4.16 0 l0 -0.8 c0.68 0 1.02 -0.1 1.02 -0.56 l0 -5.78 c0 -0.66 -0.34 -0.88 -1.2 -0.76 l0 -0.92 l2.68 -0.34 c0.72 -0.1 0.6 0.6 0.5 1.5 l-0.18 1.68 c0.54 -2.24 1.52 -3.14 3.06 -3.14 c1.1 0 1.86 0.5 1.28 1.24 z M56.89999999999999 18.12 c0 0.66 0.34 0.84 1.1 0.72 l-0.06 0.8 c-0.76 0.32 -1.28 0.48 -1.76 0.48 c-0.66 0 -1.18 -0.6 -1.32 -1.96 c-0.4 0.96 -1.2 1.96 -2.74 1.96 c-1.68 0 -3.16 -0.8 -3.16 -2.52 c0 -1.66 1.08 -2.68 5.82 -3.32 l0 -0.4 c0 -1.44 -0.42 -2.14 -1.52 -2.14 c-1.04 0 -1.54 0.26 -1.54 1.52 c0 0.42 -0.6 0.64 -1.2 0.64 s-1 -0.42 -1 -0.96 c0 -1.4 1.84 -2.14 3.82 -2.14 c2.14 0 3.56 0.96 3.56 3.5 l0 3.82 z M52.599999999999994 18.82 c1.3 0 1.88 -1.2 2.18 -1.96 l0 -1.7 c-3.3 0.52 -3.62 1.56 -3.62 2.34 c0 0.74 0.6 1.32 1.44 1.32 z"></path></g></svg>
+            </div>
+            <button class="btn btn-primary-red btn-sm">GET FREE QUOTE</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-4 mb-lg-0">
+                <h1 class="display-4 fw-bold mb-3">
+                    Welcome to <br/>
+                    <span class="text-warning">Mithra Interiors</span>
+                </h1>
+                <p class="lead mb-4 opacity-75">
+                    Transforming spaces into elegant, functional homes crafted with style, comfort, and perfection.
+                </p>
+            </div>          
+                <div class="col-lg-5">
+                    <div class="hero-form-card">
+                        <h4 class="mb-3">Designs for Every Budget</h4>
+                        <form id="leadForm">
+                            <input type="text" class="form-control" placeholder="Name" required style="margin-bottom: 15px;">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">+91</span>
+                                <input type="tel" class="form-control" placeholder="Phone number" required>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Pincode">
+                            <div class="form-check whatsapp-check mb-3">
+                                <input class="form-check-input" type="checkbox" checked id="whatsappCheck">
+                                <label class="form-check-label" for="whatsappCheck">
+                                    Send me updates on WhatsApp
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary-red w-100">NEXT</button>
+                            <p class="mt-2 mb-0 text-muted" style="font-size: 0.7rem;">
+                                By submitting this form, you agree to the <a href="#" class="text-decoration-none">privacy policy</a> & <a href="#" class="text-decoration-none">terms and conditions</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="py-4 bg-white border-bottom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-6 col-md-3 trust-badge">
+                    <i class="fas fa-calendar-check fa-2x text-danger mb-2"></i>
+                    <p>On-Time Project Delivery</p>
+                </div>
+                <div class="col-6 col-md-3 trust-badge">
+                    <i class="fas fa-shield-alt fa-2x text-danger mb-2"></i>
+                    <p>5-Year Quality Assurance</p>
+                </div>
+                <div class="col-6 col-md-3 trust-badge">
+                    <i class="fas fa-tag fa-2x text-danger mb-2"></i>
+                    <p>No Hidden Cost</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+   <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <h2 class="mb-5">Why Choose Mithra Interiors?</h2>
+            <div class="row">
+                <div class="col-6 col-md-3 mb-4 mb-md-0">
+                    <div class="stat-number" id="stat1">0</div>
+                    <div class="stat-label">Custom Designs Created</div>
+                </div>
+                <div class="col-6 col-md-3 mb-4 mb-md-0">
+                    <div class="stat-number" id="stat2">0</div>
+                    <div class="stat-label">Skilled Design Team</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-number" id="stat3">0</div>
+                    <div class="stat-label">Satisfied Customers</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-number" id="stat4">0</div>
+                    <div class="stat-label">Quality Craftsmanship</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+
+    <!-- Homes for every budget -->
+    <section class="section-padding bg-light-gray">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2>Homes for every budget</h2>
+                    <p class="text-muted">Our interior designers work with you keeping in mind your requirements and budget</p>
+                </div>
+                <button class="btn btn-primary-red d-none d-md-block">GET FREE QUOTE</button>
+            </div>
+
+            <div class="row g-4" id="budgetContainer">
+                <!-- Cards injected via JS -->
+            </div>
+            
+            <div class="text-center mt-3">
+                <small class="text-muted">*The prices include only modular interiors for new homes.</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- What we offer -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>What we offer</h2>
+               
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm p-3">
+                        <h5 class="mb-3"><i class="fas fa-tools text-danger me-2"></i> Our services</h5>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check text-success me-2"></i> Modular kitchens</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Modular wardrobes</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Lighting</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Flooring</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Electrical work</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Civil work</li>
+                            <li><i class="fas fa-check text-success me-2"></i> False ceiling</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Wall design & painting</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm p-3">
+                        <h5 class="mb-3"><i class="fas fa-rupee-sign text-danger me-2"></i> Affordable Pricing</h5>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check text-success me-2"></i> Flexible payment options with easy installment plans for your convenience.</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Transparent pricing with clear quotations and no unexpected charges.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm p-3">
+                        <h5 class="mb-3"><i class="fas fa-award text-danger me-2"></i> Quality Assurance</h5>
+                        <ul class="service-list">
+                            <li><i class="fas fa-check text-success me-2"></i> Assured quality materials and expert craftsmanship for lasting durability.</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Dedicated post-completion support for any service assistance you may need.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners 
+    <section class="section-padding bg-light-gray">
+        <div class="container text-center">
+            <h2 class="mb-2">Our trusted partners</h2>
+            <p class="text-muted mb-5">Winning collaborations that produce winning designs.</p>
+            
+            <div class="row align-items-center justify-content-center g-4">
+                <div class="col-4 col-md-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Jaquar_Logo.svg/2560px-Jaquar_Logo.svg.png" alt="Jaquar" class="partner-logo img-fluid">
+                </div>
+                <div class="col-4 col-md-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Saint-Gobain_logo.svg/2560px-Saint-Gobain_logo.svg.png" alt="Saint Gobain" class="partner-logo img-fluid">
+                </div>
+                <div class="col-4 col-md-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/CenturyPlyboard_Logo.svg/2560px-CenturyPlyboard_Logo.svg.png" alt="CenturyPly" class="partner-logo img-fluid">
+                </div>
+                <div class="col-4 col-md-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Bosch_Logo.svg/2560px-Bosch_Logo.svg.png" alt="Bosch" class="partner-logo img-fluid">
+                </div>
+                <div class="col-4 col-md-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Siemens-logo.svg/2560px-Siemens-logo.svg.png" alt="Siemens" class="partner-logo img-fluid">
+                </div>
+                <div class="col-4 col-md-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/2560px-Samsung_Logo.svg.png" alt="Samsung" class="partner-logo img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <!-- Estimates -->
+    <section class="section-padding">
+        <div class="container">
+           <div class="text-center mb-5">
+                <h2>Get an Estimate for Your Dream Home</h2>
+                <p class="text-muted">Plan your interiors with a quick and transparent cost estimate</p>
+            </div>
+
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="estimate-card">
+                        <div class="estimate-icon"><i class="fas fa-home"></i></div>
+                        <h5>Full Home</h5>
+                        <p class="small text-muted">Get an approximate costing for your full home interiors.</p>
+                        <button class="btn btn-outline-danger btn-sm rounded-pill px-4">CALCULATE <i class="fas fa-chevron-right ms-1"></i></button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="estimate-card">
+                        <div class="estimate-icon"><i class="fas fa-utensils"></i></div>
+                        <h5>Kitchen</h5>
+                        <p class="small text-muted">Get an approximate costing for your kitchen interior.</p>
+                        <button class="btn btn-outline-danger btn-sm rounded-pill px-4">CALCULATE <i class="fas fa-chevron-right ms-1"></i></button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="estimate-card">
+                        <div class="estimate-icon"><i class="fas fa-tshirt"></i></div>
+                        <h5>Wardrobe</h5>
+                        <p class="small text-muted">Get an approximate costing for your wardrobe.</p>
+                        <button class="btn btn-outline-danger btn-sm rounded-pill px-4">CALCULATE <i class="fas fa-chevron-right ms-1"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section-padding bg-light-gray">
+        <div class="container">
+            <h2 class="text-center mb-5">How it works</h2>
+            <div class="row position-relative">
+                <div class="col-6 col-md process-step">
+                    <div class="step-connector d-none d-md-block"></div>
+                    <div class="process-icon"><i class="fas fa-user-tie"></i></div>
+                    <h6>Meet a designer</h6>
+                </div>
+                <div class="col-6 col-md process-step">
+                    <div class="step-connector d-none d-md-block"></div>
+                    <div class="process-icon"><i class="fas fa-book"></i></div>
+                    <h6>(5% payment*) Book</h6>
+                </div>
+                <div class="col-6 col-md process-step">
+                    <div class="step-connector d-none d-md-block"></div>
+                    <div class="process-icon"><i class="fas fa-hard-hat"></i></div>
+                    <h6>(60% payment) Execution begins</h6>
+                </div>
+                <div class="col-6 col-md process-step">
+                    <div class="step-connector d-none d-md-block"></div>
+                    <div class="process-icon"><i class="fas fa-check-circle"></i></div>
+                    <h6>(100% payment) Final installations</h6>
+                </div>
+                <div class="col-6 col-md process-step">
+                    <div class="process-icon"><i class="fas fa-key"></i></div>
+                    <h6>Move in and enjoy!</h6>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <button class="btn btn-primary-red">BOOK A CONSULTATION</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Guide -->
+<section class="section-padding">
+    <div class="container">
+        <div class="row align-items-center bg-dark text-white rounded-3 overflow-hidden">
+            
+            <div class="col-md-6 p-0">
+                <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1000&auto=format&fit=crop"
+                     alt="Interior Design"
+                     class="img-fluid h-100 w-100"
+                     style="object-fit: cover; min-height: 300px;">
+            </div>
+
+            <div class="col-md-6 p-5">
+                <h3 class="mb-3 text-warning">Luxury Home Interior Guide</h3>
+                <p class="mb-4 text-light opacity-75">
+                    Discover expert tips, design principles, material guidance, and planning insights 
+                    from Mithra Interiors to help you create a refined and functional living space.
+                </p>
+
+                <a href="https://raw.githubusercontent.com/Manoj12612/Mithra/0b5a2a4f7e88d4d78dbd6d92e830fa9bf4229be6/Images/Mithra_Interiors_Guide.pdf"
+                   target="_blank"
+                   class="btn btn-warning text-dark fw-semibold">
+                    <i class="fas fa-download me-2"></i> DOWNLOAD GUIDE
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <!-- Testimonials
+    <section class="section-padding bg-light-gray">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2>Happy Customers in Bangalore</h2>
+                    <p class="text-muted">Here's what they have to say</p>
+                </div>
+                <button class="btn btn-outline-danger d-none d-md-block">BOOK A FREE CONSULTATION</button>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card testimonial-card h-100">
+                        <div class="video-thumb">
+                            <img src="https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?q=80&w=800&auto=format&fit=crop" alt="Customer">
+                            <div class="play-btn"><i class="fas fa-play"></i></div>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title">Prasun Mishra & Puja Guha</h6>
+                            <small class="text-muted d-block mb-2">Bangalore</small>
+                            <p class="card-text small">"The colors, the designs everything looks absolutely in-sync with what we had imagined it to be. Thanks to Livspace."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card testimonial-card h-100">
+                        <div class="video-thumb">
+                            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop" alt="Customer">
+                            <div class="play-btn"><i class="fas fa-play"></i></div>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title">Anis Choudhary & Babita Dash</h6>
+                            <small class="text-muted d-block mb-2">Bangalore</small>
+                            <p class="card-text small">"Thanks to the designer who really worked hard with us, understood our requirements in depth and translated it into the design."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card testimonial-card h-100">
+                        <div class="video-thumb">
+                            <img src="https://images.unsplash.com/photo-1484980972926-edee96e0960d?q=80&w=800&auto=format&fit=crop" alt="Customer">
+                            <div class="play-btn"><i class="fas fa-play"></i></div>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title">Swati & Gaurav Gupta</h6>
+                            <small class="text-muted d-block mb-2">Bangalore</small>
+                            <p class="card-text small">"Our experience with Livspace was very nice because of the team. They worked so much on this project and finished the project on time."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Project Gallery
+    <section class="section-padding bg-light-gray">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2>Our Recent Projects</h2>
+                    <p class="text-muted">Crafted with passion by Mithra Interiors</p>
+                </div>
+                <button class="btn btn-outline-danger d-none d-md-block">VIEW MORE PROJECTS</button>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <img src="https://manoj12612.github.io/Mithra/Images/kitchen.jpeg" alt="Project 1">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <img src="YOUR_IMAGE_2.jpg" alt="Project 2">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <img src="YOUR_IMAGE_3.jpg" alt="Project 3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section class="our-services">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h2>Our Recent Projects</h2>
+                <p class="text-muted">Crafted with passion by Mithra Interiors</p>
+            </div>
+            <button class="btn btn-outline-danger d-none d-md-block">VIEW MORE PROJECTS</button>
+        </div>
+        <div class="row g-4 gallery">
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="gallery-item">
+                    <img src="https://manoj12612.github.io/Mithra/Images/living.jpeg" alt="Project Image">
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="gallery-item">
+                    <img src="https://manoj12612.github.io/Mithra/Images/bedroom.jpeg" alt="Project Image">
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="gallery-item">
+                    <img src="https://manoj12612.github.io/Mithra/Images/dinning.jpeg" alt="Project Image">
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="gallery-item">
+                    <img src="https://manoj12612.github.io/Mithra/Images/kitchen.jpeg" alt="Project Image">
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="gallery-item">
+                    <img src="https://github.com/Manoj12612/Mithra/blob/main/Images/first.jpeg?raw=true" alt="Project Image">
+                </div>
+            </div>
+             <div class="col-6 col-md-4 col-lg-3">
+                <div class="gallery-item">
+                    <img src="https://github.com/Manoj12612/Mithra/blob/main/Images/sed.jpeg?raw=true" alt="Project Image">
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="gallery-item">
+                    <img src="https://github.com/Manoj12612/Mithra/blob/main/Images/tes.jpeg?raw=true" alt="Project Image">
+                </div>
+            </div>
+             <div class="col-6 col-md-4 col-lg-3">
+                <div class="gallery-item">
+                    <img src="https://github.com/Manoj12612/Mithra/blob/main/Images/bathroom.jpeg?raw=true" alt="Project Image">
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+    <!-- Connect -->
+    <section class="section-padding text-center">
+        <div class="container">
+            <h2>Connect with us</h2>
+            <p class="text-muted mb-4">Reach out on WhatsApp or give us a call for the best home design experience.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="tel:+919876543210" class="btn btn-outline-secondary rounded-pill px-4">
+                    <i class="fas fa-phone-alt me-2"></i> CALL NOW
+                </a>
+
+                <a href="https://wa.me/9908885826?text=Hello%20Mithra%20Interiors,%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank">
+                    <button class="btn btn-success rounded-pill px-4">
+                        <i class="fab fa-whatsapp me-2"></i> WHATSAPP
+                    </button>
+                </a>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-padding bg-light-gray">
+        <div class="container">
+            <h2 class="mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item border-0 mb-2 shadow-sm">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            1. How much does interior design cost?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-muted">
+                            The cost depends on the size of your home, design preferences, materials, and scope of work. We provide customized quotations after understanding your requirements.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item border-0 mb-2 shadow-sm">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            2. How does the design process work?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-muted">
+                            Our process includes consultation, space planning, 3D design presentation, material selection, execution, and final handover — ensuring a smooth experience from start to finish.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item border-0 mb-2 shadow-sm">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            3. How long does it take to complete a project?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-muted">
+                            Project timelines vary based on size and complexity. On average, residential interior projects are completed within 6–10 weeks.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item border-0 mb-2 shadow-sm">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            4. Do you provide customized designs?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-muted">
+                            Yes, every design is tailored to match your lifestyle, preferences, and budget. We focus on creating spaces that are both functional and aesthetically pleasing.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer-bottom text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Mithra.com All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <button class="btn btn-danger rounded-circle p-3 shadow" style="width: 60px; height: 60px;">
+            <i class="fas fa-comment-alt"></i>
+        </button>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Application Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Dynamic Budget Cards Generation
+            const budgetData = [
+                { type: '', price: '', img: '   https://github.com/Manoj12612/Mithra/blob/main/Images/dinning.jpeg?raw=true?q=80&w=800&auto=format&fit=crop' },
+                { type: '', price: '', img: 'https://manoj12612.github.io/Mithra/Images/bedroom.jpeg?q=80&w=800&auto=format&fit=crop' },
+                { type: '', price: '', img: 'https://manoj12612.github.io/Mithra/Images/kitchen.jpeg?q=80&w=800&auto=format&fit=crop' }
+            ];
+
+            const budgetContainer = document.getElementById('budgetContainer');
+            
+            budgetData.forEach(item => {
+                const col = document.createElement('div');
+                col.className = 'col-md-4';
+                col.innerHTML = `
+                    <div class="card budget-card">
+                        <div class="price-tag">${item.price}</div>
+                        <img src="${item.img}" class="card-img-top" alt="${item.type}">
+                        <div class="bhk-tag">${item.type}</div>
+                    </div>
+                `;
+                budgetContainer.appendChild(col);
+            });
+
+            // 2. Stats Counter Animation
+            const stats = [
+                { id: 'stat1', end: 10765, suffix: ' +' },
+                { id: 'stat2', end: 10, suffix: ' +' },
+                { id: 'stat3', end: 100, suffix: '+' },
+                { id: 'stat4', end: 4.6, suffix: '+' }
+            ];
+
+            const animateStats = () => {
+                stats.forEach(stat => {
+                    const el = document.getElementById(stat.id);
+                    let start = 0;
+                    const duration = 2000;
+                    const increment = stat.end / (duration / 16);
+                    
+                    const timer = setInterval(() => {
+                        start += increment;
+                        if (start >= stat.end) {
+                            el.textContent = stat.end + stat.suffix;
+                            clearInterval(timer);
+                        } else {
+                            el.textContent = Math.floor(start) + stat.suffix;
+                        }
+                    }, 16);
+                });
+            };
+
+            // Trigger animation when stats section is in view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateStats();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            const statsSection = document.querySelector('.stats-section');
+            if(statsSection) observer.observe(statsSection);
+
+            // 3. Form Handling
+            document.getElementById('leadForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btn = e.target.querySelector('button[type="submit"]');
+                const originalText = btn.innerText;
+                
+                btn.innerText = 'Submitting...';
+                btn.disabled = true;
+                
+                setTimeout(() => {
+                    btn.innerText = 'Request Sent!';
+                    btn.classList.remove('btn-primary-red');
+                    btn.classList.add('btn-success');
+                    e.target.reset();
+                    
+                    setTimeout(() => {
+                        btn.innerText = originalText;
+                        btn.disabled = false;
+                        btn.classList.add('btn-primary-red');
+                        btn.classList.remove('btn-success');
+                    }, 3000);
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+</html>
